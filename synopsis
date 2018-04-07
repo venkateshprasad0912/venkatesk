@@ -1,0 +1,20 @@
+TITLE : PAGE REPLACEMENT ALOGRITHM -FIFO 
+
+
+AIM : page replacement algorithms decide which memory pages to page out, sometimes called swap out, or write to disk.
+ 
+
+DESCRIPTION : In a operating systems that use paging for memory management, page replacement algorithm are needed to decide which page needed to be replaced when new page comes in. Whenever a new page is referred and not present in memory, page fault occurs and Operating System replaces one of the existing pages with newly needed page. Different page replacement algorithms suggest different ways to decide which page to replace. The target for all algorithms is to reduce number of page faults.
+ But in First-In-First-Out (FIFO) Replacement. On a page fault, the frame that has been in memory the longest is replaced. FIFO is not a stack algorithm. In certain cases, the number of page faults can actually increase when more frames are allocated to the process.
+
+SYSTEM REQUIREMENTS :
+Hard drive 
+5gb of minimum disk space is required for installing the software.
+ 1 gb of ram
+ Software requirement :
+ubuntu 17.04 version x64
+
+TEAM MEMBERS
+1.shashidhara.A
+2.shreyas
+3. venkatesh prasad
