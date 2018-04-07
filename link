@@ -1,0 +1,43 @@
+4.4.4. Page Replacement Algoritms
+
+    When there is a page fault, the referenced page must be loaded.
+    If there is no available frame in memory, then one page is selected for replacement
+    If the selected page has been modified, it must be copied back to disk (swapped out)
+    A page replacement algorithm is said to satisfy the inclusion property or is called a stack algorithm if the set of pages in a k-frame memory is always a subset of the pages in a (k + 1) frame memory.
+
+4.4.4.1. Static Replacement Algorithms
+
+The static paging algorithms implement the replacement policy when the frame allocation to a process is fixed.
+4.4.4.1.1. First-In-First-Out (FIFO) Replacement
+
+On a page fault, the frame that has been in memory the longest is replaced.
+../../_images/fifo.png
+
+FIFO is not a stack algorithm. In certain cases, the number of page faults can actually increase when more frames are allocated to the process. In the example below, there are 9 page faults for 3 frames and 10 page faults for 4 frames.
+../../_images/stack_fail.png
+4.4.4.1.2. Optimal Replacement
+
+The Belady’s optimal algorithm cheats. It looks forward in time to see which frame to replace on a page fault. Thus it is not a real replacement algorithm. It gives us a frame of reference for a given static frame access sequence.
+../../_images/optimal.png
+4.4.4.1.3. Least Recently Used (LRU) Replacement
+
+On a page fault, the frame that was least recently used in replaced.
+../../_images/lru.png
+4.4.4.2. LRU Approximation
+
+Pages with a current copy on disk are first choice for pages to be removed when more memory is needed. To facilitate Page Replacement Algoritms, a table of valid or invalid bits (also called dirty bits) is maintained.
+../../_images/dirty_bit.png
+
+    With each page table entry a valid-invalid bit is associated:
+        1 (in-memory)
+        0 (not-in-memory)
+
+    Initially valid-invalid but is set to 0 on all entries.
+
+    In idle times, dirty frame are copied to disk.
+
+    Additional Reference Bit: whether the frame was recently referenced.
+
+        The reference bits are refreshed on a periodic basis
+
+http://faculty.salina.k-state.edu/tim/ossg/Memory/virt_mem/page_replace.html
