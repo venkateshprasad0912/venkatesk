@@ -33,8 +33,8 @@ do
                l=${a[$i]}
         #echo $l 
                 frame[j]=$l
-        j=  ` expr $j + 1 `
-        j=  ` expr $j % $no `
+        j=`expr $j + 1 `
+        j=`expr $j % $no `
         count=  ` expr $count + 1 `
              for (( k=0; k<$no; k++ ))
         do
